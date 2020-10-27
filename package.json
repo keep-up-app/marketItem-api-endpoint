@@ -1,0 +1,34 @@
+{
+  "name": "item-api-endpoint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noahgreff/item-api-endpoint.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noahgreff/item-api-endpoint/issues"
+  },
+  "homepage": "https://github.com/noahgreff/item-api-endpoint#readme",
+  "dependencies": {
+    "custom-env": "^2.0.1",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.0",
+    "supertest": "^5.0.0"
+  }
+}
