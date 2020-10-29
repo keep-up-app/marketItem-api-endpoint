@@ -12,6 +12,9 @@ module.exports = router;
 
 /**
  * Retrieves items from given Game with Id
+ * URI: item/all/
+ * 
+ * @method {GET}
  */
 
 router.get('/all/:appid', async(req, res) => {
