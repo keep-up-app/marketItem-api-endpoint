@@ -40,7 +40,7 @@ module.exports = server;
 
 server.listen(process.env.PORT || 3535, console.log("\nEndpoint Active..."));
 server.get('/', (req, res) => res.json({
-    message: "ITEM API Endpoint",
+    message: "MARKET ITEM API Endpoint",
 }));
 
 
