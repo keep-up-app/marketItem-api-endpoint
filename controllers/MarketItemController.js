@@ -14,23 +14,18 @@ const validator = require('../util/validator');
  * @param {Object} params 
  */
 
-module.exports.getMarketItem = params => {
+module.exports.getMarketItemFromApp = params => {
     return new Promise(async(resolve, reject) => {
         let appid = params['appid'];
-        let gameItemUrl = params['url'];
         let range = params['range'] || 100;
         let page = params['page'] || 1;
         let start = (page - 1) * range;
 
-        let validate = {
-            'appid': appid,
-            'gameItemUrl': gameItemUrl
-        };
-
+        let validate = { 'appid': appid,};
         let invalid = validator.checkArgValidity(validate);
         if (invalid) reject(`Invalid ${invalid} provided: ${validate[invalid]}`);
 
-        let baseUrl = `${gameItemUrl}${appid}&count=${range}&start=${start}`;
+        let baseUrl = `${process.env.GAME_MARKET_ITEMS}${appid}&count=${range}&start=${start}`;
 
         const result = await axios.get(baseUrl)
             .then(res => res.data)
