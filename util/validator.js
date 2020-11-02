@@ -44,8 +44,9 @@ function make (fields) {
  */
 
 function validateAppId(appid) {
-    if (typeof appid != 'number')
-        return "Invalid Steam App ID.";
+    for(var i = 0; i < appid.length; i++)
+        if (!isInt(appid[i]))
+            return "Invalid Steam App ID.";
     return null;
 }
 
