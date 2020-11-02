@@ -7,38 +7,51 @@ const MarketItem = require('../models/MarketItem');
 const DB_MarketItem = require('../models/DB_MarketItem');
 const validator = require('../util/validator');
 
+module.exports = {
+    getMarketItemFromApp
+}
+
 
 /**
  * Gets all item by appid
  * 
+ * params = {
+ *    appid: 252490,
+ *    range: 100    // default
+ *    page: 1       // default
+ * }
+ * 
  * @param {Object} params 
  */
 
-module.exports.getMarketItemFromApp = params => {
+function getMarketItemFromApp(params) {
     return new Promise(async(resolve, reject) => {
-        let appid = params['appid'];
-        let range = params['range'] || 100;
-        let page = params['page'] || 1;
-        let start = (page - 1) * range;
+        
+        await validator.make(params).catch(err => reject(err));
 
-        let validate = { 'appid': appid,};
-        let invalid = validator.checkArgValidity(validate);
-        if (invalid) reject(`Invalid ${invalid} provided: ${validate[invalid]}`);
+        let appid = params.appid;
+        let range = params.range || 100;
+        let page = params.page || 1;
+        let start = (page - 1) * range;
 
         let baseUrl = `${process.env.GAME_MARKET_ITEMS}${appid}&count=${range}&start=${start}`;
 
-        const result = await axios.get(baseUrl)
+        let data = await axios.get(baseUrl)
             .then(res => res.data)
             .catch(err => reject(err));
 
-        let count = result.total_count;
-        if (!count) reject('This game has no market items.');
+        let count = data.total_count;
         var items = []
 
         for (var i = 0; i < range; i++)
-            items.push(MarketItem.constructModel(result.results[i]))
+            items.push(MarketItem.constructModel(data.results[i]))
 
-        if (items) resolve({ total: count, content: items });
-        else reject('This game has no market items.');
+        if (items.count == 0) return reject({
+            message: "This game has no market items.",
+            code: 400
+        });
+
+        return resolve({ total: count, content: items });
     });
 };
+

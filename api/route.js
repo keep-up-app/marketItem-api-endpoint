@@ -27,10 +27,11 @@ router.get('/all/:appid', async(req, res) => {
         appid: appid,
         page: page,
         range: range
-    }).catch(err => res.json({ error: err }));
+    }).catch(err => { return res.status(err.code).send({ error: err.message, details: err.details }) });
 
     let baseUrl = `${process.env.BASE_URL}/item/all/${appid}`;
     let json = format.constructJSONPagination(baseUrl, data, page, range);
 
-    res.json(json);
+    res.send(json);
 });
+

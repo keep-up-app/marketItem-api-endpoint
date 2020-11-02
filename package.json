@@ -9,7 +9,7 @@
     "scripts": {
         "start": "node server.js",
         "watch": "nodemon server.js",
-        "test": "mocha test/* --exit"
+        "test": "mocha test/_test.util.js --timeout 10000"
     },
     "repository": {
         "type": "git",

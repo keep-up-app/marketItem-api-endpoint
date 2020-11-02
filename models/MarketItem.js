@@ -24,6 +24,9 @@ module.exports.constructModel = data => {
     let price_median = data.median_price || 0;
     let price_lowest = data.lowest_price || 0;
 
+    var page = `${process.env.STEAM_ITEM_PAGE}/${appid}/${name}`;
+    page = page.split(' ').join("%20");
+    
     return {
         name,
         app_name,
@@ -31,6 +34,7 @@ module.exports.constructModel = data => {
         app_icon,
         item_icon,
         volume,
+        page,
         pricing: {
             current: price,
             text: price_text,
