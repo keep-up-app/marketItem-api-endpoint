@@ -11,16 +11,16 @@ require('custom-env').env();
 
 const express = require('express');
 const parser = require('body-parser');
-const Database = require('./util/connect');
+// const Database = require('./util/connect');
 
 
 /**
  * Connecting to database
  */
 
-Database.authenticate()
-    .then(() => console.log("Conntected to Database: [ITEM]"))
-    .catch(err => console.log("Database Connection Error: " + err.message));
+// Database.authenticate()
+//     .then(() => console.log("Conntected to Database: [ITEM]"))
+//     .catch(err => console.log("Database Connection Error: " + err.message));
 
 
 /**

@@ -4,7 +4,7 @@
 
 const axios = require('axios');
 const MarketItem = require('../models/MarketItem');
-const DB_MarketItem = require('../models/DB_MarketItem');
+// const DB_MarketItem = require('../models/DB_MarketItem');
 const validator = require('../util/validator');
 
 module.exports = {

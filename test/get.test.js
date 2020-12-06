@@ -43,10 +43,9 @@ describe('GET/ all', function() {
     it('find user with INVALID appid', done => {
         request(server).get(`/item/all/${invalidAppId}`)
             .end((err, res) => {
-                expect(res.statusCode).to.equal(400);0
+                expect(res.statusCode).to.equal(400);
                 expect(res.body.error).to.equal("Invalid Steam App ID.");
                 done();
             });
     });
-
 });

@@ -23,15 +23,16 @@ router.get('/all/:appid', async(req, res) => {
     let page = parseInt(req.query.page != null ? req.query.page : 1);
     let range = parseInt(req.query.range != null ? req.query.range : 10);
 
-    let data = await MarketItemController.getMarketItemFromApp({
+    MarketItemController.getMarketItemFromApp({
         appid: appid,
         page: page,
         range: range
-    }).catch(err => { return res.status(err.code).send({ error: err.message, details: err.details }) });
-
-    let baseUrl = `${process.env.BASE_URL}/item/all/${appid}`;
-    let json = format.constructJSONPagination(baseUrl, data, page, range);
-
-    res.send(json);
+    })
+    .then(data => {
+        let baseUrl = `${process.env.BASE_URL}/item/all/${appid}`;
+        let json = format.constructJSONPagination(baseUrl, data, page, range);
+        return res.send(json);
+    })
+    .catch(err => res.status(err.code).send({ error: err.message, details: err.details }))
 });
 
