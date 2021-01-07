@@ -9,7 +9,7 @@
     "scripts": {
         "start": "node server.js",
         "watch": "nodemon server.js",
-        "test": "mocha test/_test.util.js --timeout 10000"
+        "test": "mocha test/_test.util.js --timeout 10000 --exit"
     },
     "repository": {
         "type": "git",
@@ -23,6 +23,7 @@
     },
     "homepage": "https://github.com/noahgreff/item-api-endpoint#readme",
     "dependencies": {
+        "axios": "^0.21.1",
         "body-parser": "^1.19.0",
         "custom-env": "^2.0.1",
         "express": "^4.17.1",
