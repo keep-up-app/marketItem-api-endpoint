@@ -8,7 +8,15 @@ It is one of the containers that lay between the [steam- endpoint](https://githu
 
 It is meant to gather data from the steam endpoint and handle all the formatting and pagination.
 
-##### Getting a game's items
+## Item Model
+
+|name|description|type|default|
+|---:|---|:---:|:---:|
+| ****||
+
+## Use Cases
+
+### Getting a game's *tradable* items
 
 ```
 GET/ /item/all/:appid
