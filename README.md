@@ -1,3 +1,6 @@
+[![market-workflow-shield]][market-repo]
+
+
 # Market Item Endpoint
 
 ## Overview
@@ -85,3 +88,6 @@ Will yeild:
     }
 }
 ```
+
+[market-workflow-shield]: https://github.com/noahgreff/marketItem-api-endpoint/workflows/Market%20Endpoint%20CI/badge.svg
+[market-repo]: https://github.com/noahgreff/marketItem-api-endpoint/
