@@ -12,7 +12,7 @@ This repo contains the market item source code for the [market-item endpoint](ht
 |name|description|type|default| 
 |---:|---|:---:|:---:| 
 | **`name`** | The name of the item |*string* | "Unknown" |
-| **`appid`** |  The unique game identifier as specified by steam's API |*string* | 0 |
+| **`appid`** |  The unique game identifier as specified by steam's API |*integer* | 0 |
 | **`app_name`** | The name of the game |*integer* | "Unknown" |
 | **`app_icon`** | The game's icon url (*https*) |*string* |
 | **`item_icon`** | The item's icon url (*https*) | *string* |
@@ -44,7 +44,7 @@ This repo contains the market item source code for the [market-item endpoint](ht
 
 #### Usage
 
-Fetching items from the game *RUST*, which has `appid`: **252490**:
+Fetching items from the game *RUST*, with `appid`: **252490**:
 
 ```
 https://market-api-endpoint.herokuapp.com/item/all/252490
