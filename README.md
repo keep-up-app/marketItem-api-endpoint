@@ -8,7 +8,7 @@ It is one of the containers that lay between the [steam- endpoint](https://githu
 
 It is meant to gather data from the steam endpoint and handle all the formatting and pagination.
 
-## Item Model/Object
+## Item Model/Object(#item-model-object)
 
 |name|description|type|default| 
 |---:|---|:---:|:---:| 
