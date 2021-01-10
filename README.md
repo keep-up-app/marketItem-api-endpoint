@@ -45,12 +45,12 @@ It is meant to gather data from the steam endpoint and handle all the formatting
 
 #### Example
 
-Fetching items from the game *RUST*, which has `appid` **252490**:
+Fetching items from the game *RUST*, which has `appid`: **252490**:
 
 ```
 GET/ /item/all/252490
 ```
-
+Will yeild:
 ```json
 {
     "data": [
@@ -69,8 +69,8 @@ GET/ /item/all/252490
                 "lowest": 0
             }
         },
-
-        // 9 more item objects
+        
+        { ... }
 
     ],
     "links": {
