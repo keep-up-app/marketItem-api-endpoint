@@ -28,7 +28,7 @@ It is meant to gather data from the steam endpoint and handle all the formatting
 
 ### Getting a game's *tradable* items
 
-##### HTTP Verb: **GET**
+##### HTTP Verb: *`GET`*
 
 > * response: *JSON*
 > * URI: **/item/all/**
