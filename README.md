@@ -23,7 +23,7 @@ This repo contains the market item source code for the [market-item endpoint](ht
 | **`median`** | The median item listing price |*float* | 0.0 |
 | **`lowest`** | The cheapest item sold |*float* | 0.0 |
 
-## Use Cases
+## Endpoint URIs
 
 * ### **`/item/all`**
 
