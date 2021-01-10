@@ -27,7 +27,7 @@ This repo contains the market item source code for the [market-item endpoint](ht
 
 ### **`/item/all`**
 
-##### Use: Getting a game's *tradable* items
+##### Description: Getting a game's *tradable* items
 
 > * http verb: *`GET`*
 > * response: *JSON*
@@ -42,12 +42,12 @@ This repo contains the market item source code for the [market-item endpoint](ht
 | **`page`** | The listing page number |*integer* | 1 |
 | **`range`** | The range of items to get |*integer* | 10 |
 
-#### Example
+#### Usage
 
 Fetching items from the game *RUST*, which has `appid`: **252490**:
 
 ```
-GET/ /item/all/252490
+https://market-api-endpoint.herokuapp.com/item/all/252490
 ```
 Will yeild:
 ```json
