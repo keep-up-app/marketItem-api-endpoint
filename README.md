@@ -14,7 +14,12 @@ It is meant to gather data from the steam endpoint and handle all the formatting
 GET/ /item/all/:appid
 ```
 
-```
+|param|description|type|default|
+|---:|---|:---:|:---:|
+| **`appid`** | The unique game identifier as specified by steam's API |*string* | 
+
+
+```json
 {
 "data": [
 {
