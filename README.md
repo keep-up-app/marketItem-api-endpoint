@@ -25,12 +25,12 @@ This repo contains the market item source code for the [market-item endpoint](ht
 
 ## Use Cases
 
-### Getting a game's *tradable* items
+### **`/item/all`**
 
-##### HTTP Verb: *`GET`*
+##### Getting a game's *tradable* items
 
+> * http verb: *`GET`*
 > * response: *JSON*
-> * URI: **/item/all/**
 >
 > Returns a paginated listing of [Item](#Item-object) Objects
 
