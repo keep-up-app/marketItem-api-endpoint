@@ -5,7 +5,7 @@
 
 ## Overview
 
-This repo contains the market item source code for the [market-item endpoint](https://marketItem-endpoint-api.herokuapp.com), which meant to gather data from the steam endpoint and handle all the formatting and pagination. It is one of the containers that lay between the [steam endpoint](https://github.com/noahgreff/steam-api-endpoint) and the frontend application.
+This repo contains the market item source code for the [market-item endpoint](https://marketItem-endpoint-api.herokuapp.com), which is meant to gather data from the steam endpoint and handle all the formatting and pagination. It is one of the containers that lay between the [steam endpoint](https://github.com/noahgreff/steam-api-endpoint) and the frontend application.
 
 ## Item Object
 
