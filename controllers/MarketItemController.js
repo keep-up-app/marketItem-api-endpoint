@@ -43,13 +43,9 @@ function getMarketItemFromApp(params) {
         let count = data.total_count;
         var items = []
 
-        for (var i = 0; i < range; i++)
-            items.push(MarketItem.constructModel(data.results[i]))
-
-        if (items.count == 0) return reject({
-            message: "This game has no market items.",
-            code: 400
-        });
+        if (count > 0)
+            for (var i = 0; i < range; i++)
+                items.push(MarketItem.constructModel(data.results[i]))
 
         return resolve({ total: count, content: items });
     });
