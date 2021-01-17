@@ -20,8 +20,8 @@ module.exports = router;
 router.get('/all/:appid', async(req, res) => {
 
     let appid = req.params.appid;
-    let page = parseInt(req.query.page != null ? req.query.page : 1);
-    let range = parseInt(req.query.range != null ? req.query.range : 10);
+    let page = req.query.page ? parseInt(req.query.page) : 1;
+    let range = req.query.range ? parseInt(req.query.range) : 25;
 
     MarketItemController.getMarketItemFromApp({
         appid: appid,
