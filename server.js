@@ -11,6 +11,7 @@ require('custom-env').env();
 
 const express = require('express');
 const parser = require('body-parser');
+const cors = require('cors');
 // const Database = require('./util/connect');
 
 
@@ -30,6 +31,9 @@ const parser = require('body-parser');
 
 const server = express();
 server.disable("x-powered-by");
+server.use(cors({
+    origin: '*'
+}));
 server.use(parser.json());
 
 module.exports = server;
