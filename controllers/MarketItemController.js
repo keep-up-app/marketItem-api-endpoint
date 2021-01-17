@@ -49,5 +49,4 @@ function getMarketItemFromApp(params) {
 
         return resolve({ total: count, content: items });
     });
-};
-
+}
